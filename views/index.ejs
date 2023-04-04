@@ -1,96 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="css/project.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Jest Smart Home</title>
+    <title>SkyNet Smart Home</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
+  <header><h1 class="welcome">Welcome To SkyNet</h1></header>
+  <div class="datefont" id="date"></div>
   <body>
-    <%-include("layouts/menu")-%>
     <main>
-      <h1>Jest Smart Home</h1>
-      <div>
-        <h3 id="date_display"></h3>
-      </div>
-      <form>
-        <div>
-          <label>Notifications</label>
-          <input type="checkbox" id="notifications" checked />
+      <%-include("layouts/menu")-%>
+      <h2 class="deviceName">Device Name: Home</h2>
+      <p class="light-setting">
+        Lighting Mode:&nbsp;<strong id="selected-option">Off</strong>&nbsp;
+        Notifications:&nbsp;<strong id="selected-option2">Off</strong>&nbsp;
+        Tempature:&nbsp;<strong id="selected-option3">19°C</strong>
+      </p>
+      <div class="container">
+        <div class="light-mode">
+          <h2 class="light-title">Lighting Mode:</h2>
+          <form>
+            <input type="radio" id="off" name="selectOne" value="Off" checked />
+            <label for="off" class="radio">Off</label><br />
+            <input type="radio" id="away" name="selectOne" value="Away" />
+            &nbsp;&nbsp;&nbsp;&nbsp;<label for="away" class="radio">Away</label
+            ><br />
+            <input type="radio" id="eco" name="selectOne" value="Eco" />
+            <label for="eco" class="radio">Eco</label><br />
+            <input type="radio" id="full" name="selectOne" value="Full" />
+            <label for="full" class="radio">Full</label><br />
+            <input type="button" id="save" value="Save" />
+          </form>
         </div>
-        <div>
-          <label>Power Mode</label>
-        </div>
-        <div>
-          <div>
-            <label for="off">Off</label>
-            <input type="radio" id="off" name="lighting_mode" value="Off" />
-          </div>
-          <div>
-            <label for="away">Away</label>
-            <input type="radio" id="css" name="lighting_mode" value="Away" />
-          </div>
-          <div>
-            <label for="eco">Economy</label>
+        <div class="info">
+          <h2>Personal Information:</h2>
+          <form class="postTemp">
+            <label for="postal-code">Postal Code:</label>
             <input
-              type="radio"
-              id="eco"
-              name="lighting_mode"
-              value="Eco"
-              
+              type="text"
+              id="postal-code"
+              pattern="[A-Z][0-9][A-Z] [0-9][A-Z][0-9]"
+              required
+              value="A1A 1A1"
+              title="Please enter a valid Canadian postal code in the format A1A 1A1"
+            /><br />
+            <label>Notifications:</label>
+            <input type="radio" name="oneOption" id="On" value="On" required />
+            <label for="On" class="radio">On</label>
+            <input type="radio" name="oneOption" id="Off" value="Off" checked />
+            <label for="Off" class="radio">Off</label><br />
+
+            <label>Tempature Select:</label>
+            <span>10C</span>
+            <input
+              type="range"
+              id="temp-slider"
+              min="10"
+              max="25"
+              step="0.5"
+              value="19"
             />
-          </div>
-          <div>
-            <label for="full">Full</label>
-            <input type="radio" id="full" name="lighting_mode" value="Full" />
-          </div>
+            <span>25C</span><br />
+            <input type="button" id="submit-3" value="Save" />
+            <input type="reset" />
+          </form>
         </div>
-        <div>
-          <label>Location</label>
-          <input
-            type="text"
-            id="location"
-            placeholder="Postal Code"
-            value="L7W 4T8"
-          /><span id="location_error" class="error-span"></span>
-        </div>
-        <div>
-          <label>Temperature</label>
-          <input
-            type="number"
-            id="temperature"
-            name="temperature"
-            min="5"
-            max="30"
-            step="0.5"
-            value="21"
-          /><span id="temperature_error" class="error-span"></span>
-        </div>
-        <div>
-          <label></label>
-          <input type="submit" value="Update" id="update_settings" />
-          <input type="reset" value="Reset" id="reset_form" />
-        </div>
-      </form>
-      <h2>Current Settings</h2>
-      <div>
-        <label>Notifications&nbsp;</label>
-        <span class="current-setting" id="setting_notifications">On</span>
       </div>
-      <div>
-        <label>Lighting Mode&nbsp;</label>
-        <span class="current-setting" id="setting_lighting_mode">Eco</span>
-      </div>
-      <div>
-        <label>Location&nbsp;</label
-        ><span class="current-setting" id="setting_location">L7W 4T8</span>
-      </div>
-      <div>
-        <label>Temperature&nbsp;</label
-        ><span class="current-setting" id="setting_temperature">21</span
-        ><span>°C</span>
-      </div>
+      <script src="js/script.js"></script>
     </main>
-    <script src="js/dashboard.js"></script>
   </body>
 </html>

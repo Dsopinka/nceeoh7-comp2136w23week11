@@ -34,10 +34,6 @@ app.get("/profile", (req, res) => {
   res.render("profile", {user});
 });
 
-app.get("/math", (req, res) => {
-  res.render("math");
-});
-
 app.get("/faq", (req, res) => {
   res.sendFile(path.resolve(__dirname + "/views/", "faq.html"));
 });
