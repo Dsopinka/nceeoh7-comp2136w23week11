@@ -39,6 +39,11 @@ app.get("/slide-show", (req, res) => {
   res.render("slide-show");
 });
 
+app.get("/terms", (req, res) => {
+  res.render("terms");
+});
+
+
 app.post("/update-profile", (req, res) => {
   console.log(req.body);
 

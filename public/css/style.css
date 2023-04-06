@@ -237,3 +237,67 @@ input[type="radio"]:checked + label.radio:before {
 .slide-title {
   text-align: center;
 }
+
+footer {
+  background-color: rgba(18, 194, 233, 0.8);
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 10px;
+  line-height: 80px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+footer a:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+footer a.active {
+  color: #12c2e9;
+  background-color: #fff;
+}
+
+/* Center the links in the middle of the page */
+footer a {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+
+footer::before,
+footer::after {
+  content: "";
+  flex: 1 1;
+}
+
+.terms{
+  text-align: center;
+}
+
+.policy-text {
+  overflow: auto;
+  max-width: 50%;
+  padding-left: 25%;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#privacy {
+  text-align: center;
+}
