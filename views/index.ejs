@@ -16,6 +16,7 @@
         Lighting Mode:&nbsp;<strong id="selected-option">Off</strong>&nbsp;
         Notifications:&nbsp;<strong id="selected-option2">Off</strong>&nbsp;
         Tempature:&nbsp;<strong id="selected-option3">19°C</strong>
+        <span class="temp-timer">&nbsp;Temporary Temperature: <strong id="selected-option4"></strong></span>
       </p>
       <div class="container">
         <div class="light-mode">
@@ -62,9 +63,14 @@
               value="19"
             />
             <span>25C</span><br />
+            <label class="temp-time">Temporary Temp:</label><br>
+           <input type="number" id="hours" min="0" max="24" step="1" placeholder="Hours">
+           <input type="number" id="minutes" min="0" max="60" step="1" placeholder="Minutes"><br>
+
             <input type="button" id="submit-3" value="Save" />
-            <input type="reset" />
+            <input type="reset" id="reset-button" />
           </form>
+          
         </div>
       </div>
       <script src="js/script.js"></script>
